@@ -2,7 +2,7 @@ package com.example.demoKafka.dto;
 
 import java.util.Date;
 
-public class EmployeeDto
+public class EmployeeDTO
 {
     private String firstName;
     private String lastName;
