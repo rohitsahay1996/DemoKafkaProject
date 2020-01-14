@@ -1,6 +1,7 @@
 package com.example.demoKafka.service;
 
-public interface EmployeeFileHandler
-{
+import com.example.demoKafka.entity.Employee;
+
+public interface EmployeeFileHandler {
     String readData(int readCounter);
 }

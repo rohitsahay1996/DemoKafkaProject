@@ -1,6 +1,7 @@
 package com.example.demoKafka.service;
 
-public interface ProducerService
-{
-    void produceEmployeeDetails(String employee);
+import com.example.demoKafka.entity.Employee;
+
+public interface ProducerService {
+    public void produceEmployeeDetails(String empRecord);
 }

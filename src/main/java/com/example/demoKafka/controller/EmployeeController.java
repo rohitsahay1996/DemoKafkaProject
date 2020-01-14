@@ -1,5 +1,6 @@
 package com.example.demoKafka.controller;
 
+import com.example.demoKafka.entity.Employee;
 import com.example.demoKafka.service.EmployeeFileHandler;
 import com.example.demoKafka.service.ProducerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,22 +10,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/kafkaProject")
-public class EmployeeController
-{
-    @Autowired
-    EmployeeFileHandler employeeFileHandler;
+public class EmployeeController {
 
     @Autowired
-    ProducerService producerService;
+    private EmployeeFileHandler employeeFileHandler;
+
+    @Autowired
+    private ProducerService producerService;
 
     @GetMapping
-    String getEmployeeDetail()
-    {
-        for(int itr=0;itr<100;itr++)
-        {
-            String employee = employeeFileHandler.readData(itr);
-            producerService.produceEmployeeDetails(employee);
+    public void readJson(){
+        for(int i=0;i<100;i++){
+            String employeeDetails= employeeFileHandler.readData(i);
+            producerService.produceEmployeeDetails(employeeDetails);
         }
-        return "Success";
     }
 }

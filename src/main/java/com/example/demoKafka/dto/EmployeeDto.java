@@ -2,12 +2,22 @@ package com.example.demoKafka.dto;
 
 import java.util.Date;
 
-public class EmployeeDto
-{
+public class EmployeeDTO {
+
+    private int id;
+
     private String firstName;
     private String lastName;
     private Date dateOfBirth;
-    private Double experience;
+    private double experience;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -33,11 +43,11 @@ public class EmployeeDto
         this.dateOfBirth = dateOfBirth;
     }
 
-    public Double getExperience() {
+    public double getExperience() {
         return experience;
     }
 
-    public void setExperience(Double experience) {
+    public void setExperience(double experience) {
         this.experience = experience;
     }
 }
